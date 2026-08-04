@@ -1,0 +1,87 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: #080808;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.artifact-shell {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.loader {
+  width: 32px;
+  height: 32px;
+  color: #080808;
+}
+
+.loader svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: spin 1s linear infinite;
+  fill: none;
+}
+
+.loader__arc {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.loader__arc--second {
+  opacity: 0.6;
+}
+
+.loader__arc--third {
+  opacity: 0.3;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader svg {
+    animation-duration: 2s;
+  }
+}
